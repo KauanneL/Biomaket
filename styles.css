@@ -1,8 +1,8 @@
 :root{
-    --bg: #ffffff;
+    --bg: #e6dede;
     --card: #f7f7fb;
     --text: #222;
-    --accent: #2b7cff;
+    --accent: #ce2bff;
     --muted: #666;
     --glass: rgba(255,255,255,0.6);
   }
@@ -44,10 +44,10 @@
     z-index:1000;
   }
   .brand{
-    display:flex;gap:12px;align-items:center;font-weight:700;font-size:18px;
+    display:flex;gap:110px;align-items:center;font-weight:700;font-size:18px;
   }
   .logo{
-    width:44px;height:44px;border-radius:10px;
+    width:150px;height:44px;border-radius:10px;
     background:linear-gradient(135deg,var(--accent), #8fd1ff);
     display:flex;align-items:center;justify-content:center;color:white;font-weight:800;
     box-shadow: 0 4px 10px rgba(43,124,255,0.15);
