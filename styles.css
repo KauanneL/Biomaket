@@ -43,15 +43,40 @@ body{
   box-shadow: 0 6px 18px rgba(2,6,23,0.08);
   z-index:1000;
 }
-.brand{
-  display:flex;gap:11px;align-items:center;font-weight:700;font-size:18px; 
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+  font-size: 18px;
+  flex-wrap: nowrap;
+  min-width: 0; /* evita quebra inesperada */
 }
-.logo{
-  width:118px;height:30px;border-radius:8px;
-  background:linear-gradient(135deg,var(--accent), #8fd1ff);
-  display:flex;align-items:center;justify-content:center;color:white;font-weight:800;
-  box-shadow: 0 4px 10px rgba(43,124,255,0.15);
+
+.logo {
+  flex: 0 0 120px; /* fixa tamanho e impede encolher ou crescer */
+  height: 32px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--accent), #8fd1ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  box-sizing: border-box;
+  text-align: center;
+  white-space: nowrap; /* impede quebra de linha no texto */
 }
+
+.brand > div:last-child {
+  line-height: 1.2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .nav{
   display:flex;gap:10px;align-items:center;
 }
@@ -176,5 +201,13 @@ body{
   .tipo img {
     width: 100%;
     height: auto;
+  }
+}
+
+@media (max-width: 500px) {
+  .logo {
+    flex: 0 0 100px;
+    height: 28px;
+    font-size: 14px;
   }
 }
