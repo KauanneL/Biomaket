@@ -44,10 +44,10 @@ body{
   z-index:1000;
 }
 .brand{
-  display:flex;gap:11px;align-items:center;font-weight:700;font-size:18px;
+  display:flex;gap:11px;align-items:center;font-weight:700;font-size:18px; 
 }
 .logo{
-  width:150px;height:44px;border-radius:10px;
+  width:118px;height:30px;border-radius:8px;
   background:linear-gradient(135deg,var(--accent), #8fd1ff);
   display:flex;align-items:center;justify-content:center;color:white;font-weight:800;
   box-shadow: 0 4px 10px rgba(43,124,255,0.15);
@@ -127,7 +127,7 @@ body{
 
 /* small responsive tweaks */
 @media (max-width:480px){
-  .brand{ font-size:16px }
+  .brand{ font-size:11px }
   .title{ font-size:20px }
 }
 
