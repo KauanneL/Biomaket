@@ -57,7 +57,7 @@ body{
   flex: 0 0 120px; /* fixa tamanho e impede encolher ou crescer */
   height: 32px;
   border-radius: 8px;
-  background: linear-gradient(135deg, var(--accent), #ce2bff);
+  background: linear-gradient(135deg, var(--accent), #8fd1ff);
   display: flex;
   align-items: center;
   justify-content: center;
