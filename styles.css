@@ -211,3 +211,34 @@ body{
     font-size: 14px;
   }
 }
+
+#btnTop {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1000;
+  background: linear-gradient(135deg, var(--accent), #8fd1ff);
+  color: white;
+  border: none;
+  outline: none;
+  width: 60px;
+  height: 44px;
+  border-radius: 50px; /* formato retangular com cantos suaves */
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 700;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  transition: opacity 0.3s, transform 0.3s, background 0.3s;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+#btnTop.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hover no modo claro → tons mais suaves, mantendo o estilo original */
+#btnTop:hover {
+  background: linear-gradient(135deg, #d25fff, #77c8ff);
+}
