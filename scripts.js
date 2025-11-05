@@ -1,3 +1,9 @@
+<script>
+  window.addEventListener("load", function() {
+    alert("As imagens são ilustrativas e foram criadas pelos alunos");
+  });
+</script>
+
 // Theme toggle + persistence
 const root = document.documentElement;
 const themeBtn = () => document.querySelectorAll('[data-toggle-theme]');
