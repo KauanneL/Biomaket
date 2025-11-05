@@ -1,9 +1,3 @@
-<script>
-  window.addEventListener("load", function() {
-    alert("As imagens são ilustrativas e foram criadas pelos alunos");
-  });
-</script>
-
 // Theme toggle + persistence
 const root = document.documentElement;
 const themeBtn = () => document.querySelectorAll('[data-toggle-theme]');
@@ -19,8 +13,13 @@ function updateToggleUI(t){
 }
 
 document.addEventListener('DOMContentLoaded', ()=>{
+
+  // 🔔 alerta ao abrir a página
+  alert("As imagens são ilustrativas e foram criadas pelos alunos");
+
   // restore theme
-  const saved = localStorage.getItem('theme') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  const saved = localStorage.getItem('theme') || 
+    (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
   setTheme(saved);
 
   // attach toggle
@@ -49,7 +48,11 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
   // active link highlight
   const links = document.querySelectorAll('.nav a');
-  links.forEach(a=>{ if(a.href === location.href || (a.getAttribute('href') === location.pathname.split('/').pop())) a.classList.add('active'); });
+  links.forEach(a=>{
+    if(a.href === location.href || 
+       (a.getAttribute('href') === location.pathname.split('/').pop()))
+       a.classList.add('active');
+  });
 
   // reveal on scroll
   const obs = new IntersectionObserver((entries)=>{
@@ -64,9 +67,17 @@ document.addEventListener('DOMContentLoaded', ()=>{
     img.style.cursor = 'zoom-in';
     img.addEventListener('click', ()=>{
       const overlay = document.createElement('div');
-      overlay.style.position='fixed';overlay.style.inset=0;overlay.style.background='rgba(0,0,0,0.75)';overlay.style.display='flex';
-      overlay.style.alignItems='center';overlay.style.justifyContent='center';overlay.style.zIndex=2000;
-      const big = img.cloneNode(); big.style.maxWidth='92%'; big.style.maxHeight='92%'; big.style.borderRadius='10px';
+      overlay.style.position='fixed';
+      overlay.style.inset=0;
+      overlay.style.background='rgba(0,0,0,0.75)';
+      overlay.style.display='flex';
+      overlay.style.alignItems='center';
+      overlay.style.justifyContent='center';
+      overlay.style.zIndex=2000;
+      const big = img.cloneNode();
+      big.style.maxWidth='92%';
+      big.style.maxHeight='92%';
+      big.style.borderRadius='10px';
       overlay.appendChild(big);
       overlay.addEventListener('click', ()=>overlay.remove());
       document.body.appendChild(overlay);
@@ -75,19 +86,20 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
   const btnTop = document.getElementById("btnTop");
 
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 300) {
-    btnTop.classList.add("show");
-  } else {
-    btnTop.classList.remove("show");
-  }
-});
-
-btnTop.addEventListener("click", () => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      btnTop.classList.add("show");
+    } else {
+      btnTop.classList.remove("show");
+    }
   });
-});
+
+  btnTop.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
 
 });
+
